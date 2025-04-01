@@ -3,7 +3,7 @@ import 'dart:io';
 
 void main(List<String> args) {
   String? yourchoice;
-  do {
+  while (true) {
     print('=====Rock-Paper-Scissors=====');
     print('');
     print('Start Game and Have Fun !');
@@ -13,10 +13,14 @@ void main(List<String> args) {
 Other : Quit''');
     stdout.write("Your choice: ");
     yourchoice = stdin.readLineSync()!.toUpperCase();
-    logikGame(yourchoice);
     print('=============================');
-  } while (yourchoice == 'R' || yourchoice == 'S' || yourchoice == 'p');
-  print("thanks for playing !!!!.");
+    if (yourchoice != "R" || yourchoice != "S" || yourchoice != "P") {
+      print("thanks for playing !!!!.");
+      break;
+    } else {
+      print("Fun Playing.");
+    }
+  }
 }
 
 void logikGame(yourchoice) {
